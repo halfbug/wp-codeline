@@ -20,11 +20,11 @@ function create_post_type() {
     array(
       'labels' => array(
         'name' => __( 'Films' ),
-        'singular_name' => __( 'Films' )
+        'singular_name' => __( 'Film' )
       ),
       'public' => true,
       'has_archive' => true,
-	  
+	  'supports' => array( 'title', 'editor', 'custom-fields','thumbnail' ),
     )
   );
 }
