@@ -98,3 +98,8 @@ function themes_taxonomy_actors() {
 }  
 add_action( 'init', 'themes_taxonomy_actors');
 
+$set = get_option( 'post_type_rules_flased_mycpt' );
+if ( $set !== true ){
+    flush_rewrite_rules( false );
+    update_option( 'post_type_rules_flased_mycpt', true );
+}

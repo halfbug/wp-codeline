@@ -32,9 +32,9 @@
 
 	<footer class="entry-meta">
 	<?php 
-			echo "Country :". get_post_meta($post->ID, "Country", true);
-			echo "<br>Genre :". get_post_meta($post->ID, "Genre", true);
-			echo "<br>Ticket Price :". get_post_meta($post->ID, "Ticket Price", true);
+			echo get_the_term_list( $post->ID, 'country', 'Country: ', ', ', '<br />' );
+			echo get_the_term_list( $post->ID, 'genre', 'Genre: ', ', ', '<br />' );
+			echo "Ticket Price :". get_post_meta($post->ID, "Ticket Price", true);
 			echo "<br>Release Date :". get_post_meta($post->ID, "Release Date", true);
 			echo "<br>";
 			?>
