@@ -31,12 +31,13 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-	<?php 
+	<?php if( $post->post_type == "sadaf_films"){
 			echo get_the_term_list( $post->ID, 'country', 'Country: ', ', ', '<br />' );
 			echo get_the_term_list( $post->ID, 'genre', 'Genre: ', ', ', '<br />' );
 			echo "Ticket Price :". get_post_meta($post->ID, "Ticket Price", true);
 			echo "<br>Release Date :". get_post_meta($post->ID, "Release Date", true);
 			echo "<br>";
+			}
 			?>
 		<?php
 			/* translators: used between list items, there is a space after the comma */
