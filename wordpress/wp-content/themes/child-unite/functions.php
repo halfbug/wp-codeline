@@ -103,3 +103,26 @@ if ( $set !== true ){
     flush_rewrite_rules( false );
     update_option( 'post_type_rules_flased_mycpt', true );
 }
+// Function to show last 5 films  at right sidebar under search field.
+
+  function last_five_films() {
+  
+	$posts = get_posts([
+  'post_type' => 'sadaf_films',
+  'post_status' => 'publish',
+  'numberposts' => 5,
+  'order'    => 'DESC'
+   ]);
+   
+   //print_r($posts);
+   //echo "<h3 class=\"widget-title\">Last Five Films</h3>";
+   //echo "<ul>";
+   $strig="";
+   foreach ($posts as $post){
+		$string=$string. '<li><a href="'.$post->guid.'">'.$post->post_title.'</a></li>';
+   
+   }
+    return $string;
+}
+add_shortcode('last5films', 'last_five_films');
+
